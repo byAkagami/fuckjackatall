@@ -7,11 +7,11 @@ git clone https://github.com/axxx007xxxz/fuckjackatall
 
 ###How to use it
 ```bash
-cd fuckjack
-cp build.sh YOUR-SOURCE-DIRECTORY
-cd YOUR-SOURCE-DIRECTORY
-./build.sh DEVICE
+cd fuckjackatall
+cp build_x.sh <ANDROID-SOURCE-DIRECTORY>
+cd <ANDROID-SOURCE-DIRECTORY>
+./build_x.sh <DEVICE>
 ```
 
 
-##Pray to almighty Google that they fix these issues in android-7.1. May the force be with you.
+##Pray to almighty Google that they fix these issues in Android 7.1. May the force be with you.

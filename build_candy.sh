@@ -21,10 +21,11 @@
 # The purpose of this script is to work around JACK and NINJA, which have been
 # broken in AOSP as of android-7.0.
 #
-# Usage: ./build.sh <DEVICE>
+# Usage: ./build_candy.sh <DEVICE>
 #
 
-DEVICE="$1"
+# Optionally, you may want to sync the repo
+#	repo sync -j4
 
 # Tell the environment not to use NINJA
 	export USE_NINJA=false
@@ -43,9 +44,9 @@ DEVICE="$1"
 #	ccache -C
 
 # Make a clean build, building dirty after you have had jack issues may result in a failed build
-	make clean
+	make clobber
 
 # Compile the build
 	. build/envsetup.sh
-	lunch du_$DEVICE-userdebug
-	make bacon
+	lunch candy_${1}-userdebug
+	mka -j4 bacon
