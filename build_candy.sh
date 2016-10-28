@@ -25,16 +25,19 @@
 #
 
 # Optionally, you may want to sync the repo
-#	repo sync -j4
+#	repo sync --force-sync -f -c -j4
 
 # Tell the environment not to use NINJA
 	export USE_NINJA=false
 
-# Delete the JACK server located in /home/<USER>/.jack*
-	rm -rf ~/.jack*
+# Resize the Java Heap size
+	export _JAVA_OPTIONS="-Xmx4096m"
+
+# Optionally, you may want to delete the JACK server located in /home/<USER>/.jack*
+#	rm -fr ~/.jack*
 
 # Resize the JACK Heap size
-	export ANDROID_JACK_VM_ARGS="-Xmx4g -Dfile.encoding=UTF-8 -XX:+TieredCompilation"
+	export ANDROID_JACK_VM_ARGS="-Xmx1024m -Dfile.encoding=UTF-8 -XX:+TieredCompilation"
 
 # Restart the JACK server
 	./prebuilts/sdk/tools/jack-admin kill-server
@@ -43,10 +46,10 @@
 # Optionally, you may want to clear CCACHE if you still have issues
 #	ccache -C
 
-# Make a clean build, building dirty after you have had jack issues may result in a failed build
-	make clobber
+# Optionally, you may want to make a clean build, building dirty after you have had jack issues may result in a failed build
+#	make clobber
 
 # Compile the build
 	. build/envsetup.sh
 	lunch candy_${1}-userdebug
-	mka -j4 bacon
+	mka -j2 bacon
