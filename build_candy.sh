@@ -52,4 +52,4 @@
 # Compile the build
 	. build/envsetup.sh
 	lunch candy_${1}-userdebug
-	mka -j2 bacon
+	mka bacon
