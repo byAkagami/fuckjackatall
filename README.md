@@ -1,4 +1,4 @@
-#fuckjack
+#fuckjackatall
 
 ###How to get it
 ```bash
