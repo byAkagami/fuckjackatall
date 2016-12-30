@@ -4,6 +4,7 @@
 # The "Fuck Jack Build Script"
 #
 # Written by Michael S Corigliano (Mike Criggs) (michael.s.corigliano@gmail.com)
+# Improved by axxx007xxxz
 #
 #
 # This software is licensed under the terms of the GNU General Public
