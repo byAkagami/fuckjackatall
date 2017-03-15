@@ -29,6 +29,11 @@ function killjack {
 	./prebuilts/sdk/tools/jack-admin kill-server
 }
 
+function restartjack {
+	killjack
+	./prebuilts/sdk/tools/jack-admin start-server
+}
+
 function build {
 	if [[ $SYNC == true ]]; then repo sync --force-sync -f -c -j4; fi
 	brunch $1
@@ -57,8 +62,7 @@ function buildagain {
 	export ANDROID_JACK_VM_ARGS="-Xmx1024m -Dfile.encoding=UTF-8 -XX:+TieredCompilation"
 
 # Restart the JACK server
-	killjack
-	./prebuilts/sdk/tools/jack-admin start-server
+	restartjack
 
 # Optionally, you may want to clear CCACHE if you still have issues
 #	ccache -C
