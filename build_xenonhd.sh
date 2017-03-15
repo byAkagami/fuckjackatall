@@ -35,6 +35,12 @@ function build {
 	mka bacon
 }
 
+function buildagain {
+	for files in out/target/product/${1}/*.zip; do
+	        if [ ! -e $files ]; then build $1; fi
+	done
+}
+
 
 # Optionally, you may want to sync the repo
 #	SYNC=true
@@ -64,6 +70,12 @@ function build {
 # Compile the build
 	. build/envsetup.sh
 	build $1	
+
+# Optionally, you may want to build again if the build failed
+#	buildagain $1
+#	buildagain $1
+#	buildagain $1
+#	buildagain $1
 
 # Kill JACK
 	killjack
