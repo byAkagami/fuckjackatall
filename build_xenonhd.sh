@@ -29,9 +29,15 @@ function killjack {
 	./prebuilts/sdk/tools/jack-admin kill-server
 }
 
+function build {
+	if [[ $SYNC == true ]]; then repo sync --force-sync -f -c -j4; fi
+	lunch xenonhd_${1}-userdebug
+	mka bacon
+}
+
 
 # Optionally, you may want to sync the repo
-#	repo sync --force-sync -f -c -j4
+#	SYNC=true
 
 # Tell the environment not to use NINJA
 	export USE_NINJA=false
@@ -57,8 +63,7 @@ function killjack {
 
 # Compile the build
 	. build/envsetup.sh
-	lunch xenonhd_${1}-userdebug
-	mka bacon
+	build $1	
 
 # Kill JACK
 	killjack
