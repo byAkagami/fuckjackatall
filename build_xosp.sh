@@ -58,3 +58,6 @@ function killjack {
 # Compile the build
 	. build/envsetup.sh
 	brunch ${1}
+
+# Kill JACK
+	killjack

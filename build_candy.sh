@@ -59,3 +59,6 @@ function killjack {
 	. build/envsetup.sh
 	lunch candy_${1}-userdebug
 	mka bacon
+
+# Kill JACK
+	killjack
