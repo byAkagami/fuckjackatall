@@ -31,7 +31,7 @@ function killjack {
 
 function build {
 	if [[ $SYNC == true ]]; then repo sync --force-sync -f -c -j4; fi
-	brunch ${1}
+	brunch $1
 }
 
 function buildagain {
