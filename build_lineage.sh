@@ -22,7 +22,7 @@
 # The purpose of this script is to work around JACK and NINJA, which have been
 # broken in AOSP as of android-7.0.
 #
-# Usage: ./build_cm.sh <DEVICE>
+# Usage: ./build_lineage.sh <DEVICE>
 #
 
 function killjack {
@@ -31,7 +31,7 @@ function killjack {
 
 function build {
 	if [[ $SYNC == true ]]; then repo sync --force-sync -f -c -j4; fi
-	lunch cm_${1}-userdebug
+	lunch lineage_${1}-userdebug
 	mka bacon
 }
 
