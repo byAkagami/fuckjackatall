@@ -25,6 +25,11 @@
 # Usage: ./build_xenonhd.sh <DEVICE>
 #
 
+function killjack {
+	./prebuilts/sdk/tools/jack-admin kill-server
+}
+
+
 # Optionally, you may want to sync the repo
 #	repo sync --force-sync -f -c -j4
 
@@ -41,7 +46,7 @@
 	export ANDROID_JACK_VM_ARGS="-Xmx1024m -Dfile.encoding=UTF-8 -XX:+TieredCompilation"
 
 # Restart the JACK server
-	./prebuilts/sdk/tools/jack-admin kill-server
+	killjack
 	./prebuilts/sdk/tools/jack-admin start-server
 
 # Optionally, you may want to clear CCACHE if you still have issues
