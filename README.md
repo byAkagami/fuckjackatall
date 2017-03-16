@@ -12,6 +12,3 @@ cp build_x.sh <ANDROID-SOURCE-DIRECTORY>
 cd <ANDROID-SOURCE-DIRECTORY>
 ./build_x.sh <DEVICE>
 ```
-
-
-##Pray to almighty Google that they fix these issues in Android 7.1. May the force be with you.
