@@ -19,7 +19,7 @@
 # Please maintain this if you use this script or any part of it
 #
 #
-# The purpose of this script is to work around JACK and NINJA, which have been
+# The purpose of this script is to work around Jack and Ninja, which have been
 # broken in AOSP as of android-7.0.
 #
 # Usage: ./build_candy.sh <DEVICE>
@@ -50,22 +50,22 @@ function buildagain {
 # Optionally, you may want to sync the repo
 #	SYNC=true
 
-# Tell the environment not to use NINJA
+# Tell the environment not to use Ninja
 	export USE_NINJA=false
 
 # Resize the Java Heap size
 	export _JAVA_OPTIONS="-Xmx4096m"
 
-# Optionally, you may want to delete the JACK server located in /home/<USER>/.jack*
+# Optionally, you may want to delete the Jack server located in /home/<USER>/.jack*
 #	rm -fr ~/.jack*
 
-# Resize the JACK Heap size
+# Resize the Jack Heap size
 	export ANDROID_JACK_VM_ARGS="-Xmx1024m -Dfile.encoding=UTF-8 -XX:+TieredCompilation"
 
-# Restart the JACK server
+# Restart the Jack server
 	restartjack
 
-# Optionally, you may want to clear CCACHE if you still have issues
+# Optionally, you may want to clear ccache if you still have issues
 #	ccache -C
 
 # Optionally, you may want to make a clean build, building dirty after you have had jack issues may result in a failed build
@@ -81,5 +81,5 @@ function buildagain {
 #	buildagain $1
 #	buildagain $1
 
-# Kill JACK
+# Kill Jack
 	killjack
