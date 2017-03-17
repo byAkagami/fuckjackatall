@@ -1,7 +1,6 @@
 #!/bin/bash
 
-#
-# The "Fuck Jack Build Script"
+# The "Fuck Jack build script"
 #
 # Written by Michael S Corigliano (Mike Criggs) (michael.s.corigliano@gmail.com)
 # Improved by axxx007xxxz
@@ -20,10 +19,9 @@
 #
 #
 # The purpose of this script is to work around Jack and Ninja, which have been
-# broken in AOSP as of android-7.0.
+# broken in AOSP as of Android 7.0.
 #
 # Usage: ./build_xosp.sh <DEVICE>
-#
 
 function killjack {
 	./prebuilts/sdk/tools/jack-admin kill-server
@@ -49,7 +47,7 @@ function buildagain {
 }
 
 
-# Optionally, you may want to sync the repo
+# Optionally, you may want to sync the sources
 #	SYNC=true
 
 # Tell the environment not to use Ninja
