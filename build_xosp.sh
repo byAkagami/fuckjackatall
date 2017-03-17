@@ -41,7 +41,10 @@ function build {
 
 function buildagain {
 	for files in out/target/product/${1}/*.zip; do
-	        if [ ! -e $files ]; then restartjack || build $1; fi
+	        if [ ! -e $files ]; then
+	        	restartjack
+	        	build $1
+	        fi
 	done
 }
 
