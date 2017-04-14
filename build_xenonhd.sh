@@ -35,7 +35,7 @@ function restartjack {
 function build {
 	if [[ $SYNC == true ]]; then repo sync --force-sync -f --no-clone-bundle -c --no-tags -j4; fi
 	lunch xenonhd_${1}-userdebug
-	mka bacon
+	make -j2 bacon
 }
 
 function buildagain {

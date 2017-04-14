@@ -34,7 +34,7 @@ function restartjack {
 
 function build {
 	if [[ $SYNC == true ]]; then repo sync --force-sync -f --no-clone-bundle -c --no-tags -j4; fi
-	brunch $1
+	brunch $1 -j2
 }
 
 function buildagain {
