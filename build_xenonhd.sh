@@ -54,6 +54,9 @@ function buildagain {
 # Tell the environment not to use Ninja
 	export USE_NINJA=false
 
+# Tell the environment to use ccache
+	export USE_CCACHE=1
+
 # Resize the Java Heap size
 	export _JAVA_OPTIONS="-Xmx4096m"
 
