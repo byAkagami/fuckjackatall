@@ -75,6 +75,9 @@ function buildagain {
 # Optionally, you may want to make a clean build, building dirty after you have had jack issues may result in a failed build
 #	make clobber
 
+# Optionally, you may want to clean up some files before building (this doesn't equal to make clean/clobber)
+#	make installclean
+
 # Compile the build
 	. build/envsetup.sh
 	build $1
