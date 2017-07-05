@@ -47,6 +47,13 @@ function buildagain {
 }
 
 
+# Check if the codename has been defined
+if [ ! $1 ]; then
+	echo "ERROR: You must define the device's codename."
+	exit
+fi
+
+
 # Optionally, you may want to sync the sources
 #	SYNC=true
 
