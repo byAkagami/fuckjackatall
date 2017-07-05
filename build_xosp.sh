@@ -49,8 +49,9 @@ function buildagain {
 
 # Check if the codename has been defined
 if [ ! $1 ]; then
-	echo "ERROR: You must define the device's codename."
-	exit
+	echo "WARNING: You haven't defined a device codename."
+	echo "Waiting 5 seconds before starting the building process."
+	sleep 5
 fi
 
 
