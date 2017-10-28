@@ -2,7 +2,7 @@
 
 ### How to get it
 ```bash
-git clone https://github.com/axxx007xxxz/fuckjackatall
+git clone https://github.com/byAkagami/fuckjackatall.git
 ```
 
 ### How to use it
